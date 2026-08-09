@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nepali Input Test Page</title>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Noto Sans Devanagari", "Noto Sans", Arial, sans-serif;
+      background: #f4f6f9;
+      color: #1a1a2e;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      color: #2d2d44;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+      padding: 1.5rem;
+    }
+
+    .card h2 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: #333;
+      border-bottom: 2px solid #e74c3c;
+      padding-bottom: 0.4rem;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+      font-size: 0.9rem;
+      color: #444;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    textarea {
+      width: 100%;
+      padding: 0.65rem 0.75rem;
+      font-size: 1rem;
+      font-family: inherit;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="tel"]:focus,
+    input[type="number"]:focus,
+    textarea:focus {
+      border-color: #e74c3c;
+      box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.15);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .full-width {
+      grid-column: 1 / -1;
+    }
+
+    .inline-group {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .inline-group > div {
+      flex: 1;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Nepali Input Test Page</h1>
+    <p>Type in Romanized Nepali — the fields below will convert to Devanagari automatically.</p>
+  </header>
+
+  <div class="form-grid">
+
+    <!-- Basic info -->
+    <div class="card">
+      <h2>Basic Info</h2>
+      <label for="name">नाम (Name)</label>
+      <input type="text" id="name" placeholder="e.g. Ram Shrestha" class="nepali-input">
+
+      <label for="email">इमेल (Email)</label>
+      <input type="email" id="email" placeholder="e.g. ram@example.com" class="nepali-input">
+
+      <label for="phone">फोन (Phone)</label>
+      <input type="tel" id="phone" placeholder="e.g. 98412345678" class="nepali-input">
+    </div>
+
+    <!-- Additional info -->
+    <div class="card">
+      <h2>Additional Info</h2>
+      <label for="age">आफ्नो उमेर (Your Age)</label>
+      <input type="number" id="age" placeholder="e.g. 25" class="nepali-input">
+
+      <label for="pin">पिङ्ग कोड (PIN Code)</label>
+      <input type="text" id="pin" placeholder="e.g. 12345" class="nepali-input">
+    </div>
+
+    <!-- Address -->
+    <div class="card full-width">
+      <h2>Address / ठेगाना</h2>
+      <div class="inline-group">
+        <div>
+          <label for="city">शहर (City)</label>
+          <input type="text" id="city" placeholder="e.g. Kathmandu">
+        </div>
+        <div>
+          <label for="district">जिल्ला (District)</label>
+          <input type="text" id="district" placeholder="e.g. Lalitpur">
+        </div>
+      </div>
+      <label for="address">पूरा ठेगाना (Full Address)</label>
+      <textarea id="address" placeholder="e.g. Balkumari-7, Lalitpur, Nepal"></textarea>
+    </div>
+
+    <!-- Message -->
+    <div class="card full-width">
+      <h2>Message / सन्देश</h2>
+      <label for="message">तपाईंको सन्देश लेख्नुहोस् (Write your message)</label>
+      <textarea id="message" placeholder="e.g. तपाईं कस्तो हुनुहुन्छ?" style="min-height:180px;"></textarea>
+    </div>
+
+  </div>
+
+  <footer>Powered by Nepali Input Plugin</footer>
+
+  <script src="NepaliInput.js"></script>
+  <script>
+    NepaliInput.init(); // auto-init all .nepali-input elements
+  </script>
+</body>
+</html>

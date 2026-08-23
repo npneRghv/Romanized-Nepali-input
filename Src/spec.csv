@@ -1,0 +1,8 @@
+keycode,withShift,output
+a,true,आ
+a,false,ा
+H,true,अ
+k,false,क
+k,true,ख
+s,false,स
+s,true,श

@@ -3,11 +3,10 @@
 
 
   var MAPPINGS = {
-    k: "क",
-    a: "आ",
-    H: "अ",
-    m: "म",
-    n: "न",
+    KeyA: { withShift: "आ", withoutShift: "ा" },
+    KeyH: { withShift: "अ", withoutShift: "" },
+    KeyK: { withShift: "ख", withoutShift: "क" },
+    KeyS: { withShift: "श", withoutShift: "स" },
   };
 
   var PASS_THROUGH = [
@@ -29,13 +28,17 @@
 
   function _onKeydown(e) {
     var el = e.target;
-    var key = e.key;
+    var code = e.code;
+    var hasShift = e.shiftKey;
 
     for (var i = 0; i < PASS_THROUGH.length; i++) {
-      if (key === PASS_THROUGH[i]) return;
+      if (code === PASS_THROUGH[i]) return;
     }
 
-    if (MAPPINGS[key]) {
+    if (MAPPINGS[code]) {
+      var output = MAPPINGS[code][hasShift ? "withShift" : "withoutShift"];
+      if (!output) return;
+
       e.preventDefault();
 
       var start = el.selectionStart;
@@ -44,9 +47,9 @@
       var before = el.value.substring(0, start);
       var after = el.value.substring(end);
 
-      el.value = before + MAPPINGS[key] + after;
+      el.value = before + output + after;
 
-      var newPos = start + MAPPINGS[key].length;
+      var newPos = start + output.length;
       el.setSelectionRange(newPos, newPos);
     }
   }

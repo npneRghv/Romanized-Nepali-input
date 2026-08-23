@@ -69,10 +69,12 @@
   ];
 
   function resolveKey(code, shiftKey) {
-    var mapping = MAPPINGS[code];
+    var mapping = _currentMappings[code];
     if (!mapping) return null;
     return shiftKey ? mapping.withShift : mapping.withoutShift;
   }
+
+  var _currentMappings = MAPPINGS;
 
   function _onKeydown(e) {
     var el = e.target;
@@ -103,6 +105,9 @@
   }
 
   function _init(selector) {
+    var options = arguments[1];
+    var mappings = options && options.mappings ? options.mappings : MAPPINGS;
+    _currentMappings = mappings;
     var elements;
 
     if (!selector) {
@@ -116,7 +121,6 @@
     }
 
     for (var i = 0; i < elements.length; i++) {
-
       elements[i].addEventListener("keydown", _onKeydown);
     }
   }

@@ -76,6 +76,14 @@
 
   var _currentMappings = MAPPINGS;
 
+  // Inserts a string at a specific position within another string,
+  // simulating text insertion at the cursor point in a form field.
+  // Finally returns modified string and new cursor position.
+  function insertAtCursor(text, start, output) {
+    var before = text.substring(0, start);
+    return { text: before + output, position: start + output.length };
+  }
+
   function _onKeydown(e) {
     var el = e.target;
     var code = e.code;
@@ -91,16 +99,9 @@
 
       e.preventDefault();
 
-      var start = el.selectionStart;
-      var end = el.selectionEnd;
-
-      var before = el.value.substring(0, start);
-      var after = el.value.substring(end);
-
-      el.value = before + output + after;
-
-      var newPos = start + output.length;
-      el.setSelectionRange(newPos, newPos);
+      var result = insertAtCursor(el.value, el.selectionStart, output);
+      el.value = result.text;
+      el.setSelectionRange(result.position, result.position);
     }
   }
 

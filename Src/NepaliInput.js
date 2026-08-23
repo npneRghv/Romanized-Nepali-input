@@ -1,7 +1,6 @@
 (function () {
   var NEPALI_INPUT_CLASS = "nepali-input";
 
-
   var MAPPINGS = {
     Digit1: { withShift: "!", withoutShift: "१" },
     Digit2: { withShift: "@", withoutShift: "२" },

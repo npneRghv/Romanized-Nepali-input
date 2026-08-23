@@ -68,6 +68,12 @@
     "Insert",
   ];
 
+  function resolveKey(code, shiftKey) {
+    var mapping = MAPPINGS[code];
+    if (!mapping) return null;
+    return shiftKey ? mapping.withShift : mapping.withoutShift;
+  }
+
   function _onKeydown(e) {
     var el = e.target;
     var code = e.code;
@@ -78,7 +84,7 @@
     }
 
     if (MAPPINGS[code]) {
-      var output = MAPPINGS[code][hasShift ? "withShift" : "withoutShift"];
+      var output = resolveKey(code, hasShift);
       if (!output) return;
 
       e.preventDefault();

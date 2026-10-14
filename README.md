@@ -25,7 +25,6 @@ A vanilla JavaScript plugin that converts Romanized Nepali (English keyboard) in
   NepaliInput.init('.my-custom-input'); // hooks only matching elements
 </script>
 ```
-```
 
 ## API
 

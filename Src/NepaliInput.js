@@ -1,5 +1,6 @@
 (function () {
   var NEPALI_INPUT_CLASS = "nepali-input";
+  var VERSION = "1.0.0";
 
   var MAPPINGS = {
     Digit1: { withShift: "!", withoutShift: "१" },
@@ -127,5 +128,6 @@
 
   window.NepaliInput = {
     init: _init,
+    VERSION: VERSION,
   };
 })();

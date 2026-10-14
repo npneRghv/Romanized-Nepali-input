@@ -33,6 +33,10 @@ The plugin intercepts `keydown` events on target elements. When a mapped key is 
 
 Shift behavior varies by key — some keys produce different Devanagari characters when combined with Shift, others produce symbols.
 
+## Keyboard Layout
+
+![Nepali Romanized Keyboard Layout](Assets/Nepali-Romanized.png)
+
 ## Testing
 
 Open `Sample/Sample.html` in a browser for manual testing.

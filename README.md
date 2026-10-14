@@ -13,6 +13,7 @@ A vanilla JavaScript plugin that converts Romanized Nepali (English keyboard) in
 <script>
   NepaliInput.init(); // auto-hooks all .nepali-input elements
 </script>
+```
 
 ### Custom selector
 
@@ -23,6 +24,7 @@ A vanilla JavaScript plugin that converts Romanized Nepali (English keyboard) in
 <script>
   NepaliInput.init('.my-custom-input'); // hooks only matching elements
 </script>
+```
 ```
 
 ## API

@@ -31,6 +31,7 @@ A vanilla JavaScript plugin that converts Romanized Nepali (English keyboard) in
 - **`NepaliInput.init(selector?)`** — Initialize the plugin on target elements
 - **`NepaliInput.init(selector, { mappings })`** — Override the default character mapping table
 - **`NepaliInput.VERSION`** — Current plugin version string
+- **`NepaliInput.destroy(selector?)`** — Remove plugin from previously hooked elements
 
 ### Selector Options
 

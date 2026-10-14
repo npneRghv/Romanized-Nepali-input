@@ -67,6 +67,8 @@
     "PageUp",
     "PageDown",
     "Insert",
+    "ControlLeft",
+    "ControlRight",
   ];
 
   function resolveKey(code, shiftKey) {
@@ -85,6 +87,8 @@
     return { text: before + output, position: start + output.length };
   }
 
+  var _hookedElements = [];
+
   function _onKeydown(e) {
     var el = e.target;
     var code = e.code;
@@ -93,6 +97,8 @@
     for (var i = 0; i < PASS_THROUGH.length; i++) {
       if (code === PASS_THROUGH[i]) return;
     }
+
+    if (e.ctrlKey) return;
 
     if (MAPPINGS[code]) {
       var output = resolveKey(code, hasShift);
@@ -124,11 +130,33 @@
 
     for (var i = 0; i < elements.length; i++) {
       elements[i].addEventListener("keydown", _onKeydown);
+      _hookedElements.push(elements[i]);
     }
+  }
+
+  function _destroy(selector) {
+    var elements;
+
+    if (!selector) {
+      elements = _hookedElements;
+    } else if (typeof selector === "string") {
+      elements = document.querySelectorAll(selector);
+    } else if (selector instanceof HTMLElement) {
+      elements = [selector];
+    } else {
+      return;
+    }
+
+    for (var i = 0; i < elements.length; i++) {
+      elements[i].removeEventListener("keydown", _onKeydown);
+    }
+
+    _hookedElements = [];
   }
 
   window.NepaliInput = {
     init: _init,
+    destroy: _destroy,
     VERSION: VERSION,
   };
 })();

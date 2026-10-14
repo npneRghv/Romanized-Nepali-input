@@ -15,6 +15,7 @@
     Digit0: { withShift: ")", withoutShift: "०" },
     Minus: { withShift: "_", withoutShift: "-" },
     Equal: { withShift: "\u200C", withoutShift: "\u200D" },
+    Backquote: { withShift: "\u093D", withoutShift: "\u093C" },
     BracketLeft: { withShift: "ई", withoutShift: "इ" },
     BracketRight: { withShift: "ऐ", withoutShift: "ए" },
     Backslash: { withShift: "ः", withoutShift: "ॐ" },

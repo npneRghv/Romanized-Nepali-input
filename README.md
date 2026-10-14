@@ -4,12 +4,24 @@ A vanilla JavaScript plugin that converts Romanized Nepali (English keyboard) in
 
 ## Usage
 
+### Default (auto-detect)
+
 ```html
 <input class="nepali-input" type="text">
 
 <script src="NepaliInput.js"></script>
 <script>
   NepaliInput.init(); // auto-hooks all .nepali-input elements
+</script>
+
+### Custom selector
+
+```html
+<input class="my-custom-input" type="text">
+
+<script src="NepaliInput.js"></script>
+<script>
+  NepaliInput.init('.my-custom-input'); // hooks only matching elements
 </script>
 ```
 

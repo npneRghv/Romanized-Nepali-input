@@ -1,4 +1,4 @@
-﻿keycode,withShift,output
+keycode,withShift,output
 Digit1,false,१
 Digit1,true,!
 Digit2,false,२
@@ -21,8 +21,10 @@ Digit0,false,०
 Digit0,true,)
 Minus,false,-
 Minus,true,_
-Equal,false,=
-Equal,true,+
+Equal,false,‍
+Equal,true,‌
+Backquote,false,़
+Backquote,true,ऽ
 BracketLeft,false,इ
 BracketLeft,true,ई
 BracketRight,false,ए
@@ -32,12 +34,12 @@ Backslash,true,ः
 Semicolon,false,;
 Semicolon,true,:
 Quote,false,'
-Quote,true,""""
-Comma,false,","
+Quote,true,"
+Comma,false,,
 Comma,true,ङ
-Period,false,.
-Period,true,।
-Slash,false,/
+Period,false,।
+Period,true,॥
+Slash,false,्
 Slash,true,?
 KeyQ,false,ट
 KeyQ,true,ठ

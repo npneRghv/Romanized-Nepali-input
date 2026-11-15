@@ -125,11 +125,19 @@
     } else if (selector instanceof HTMLElement) {
       elements = [selector];
     } else {
+      console.warn("NepaliInput: invalid selector type, skipping init.");
+      return;
+    }
+
+    if (elements.length === 0) {
+      console.warn("NepaliInput: no matching elements found.");
       return;
     }
 
     for (var i = 0; i < elements.length; i++) {
       elements[i].addEventListener("keydown", _onKeydown);
+      elements[i].setAttribute("aria-label", "Nepali input");
+      elements[i].classList.add("nepali-input-active");
       _hookedElements.push(elements[i]);
     }
   }
@@ -144,11 +152,19 @@
     } else if (selector instanceof HTMLElement) {
       elements = [selector];
     } else {
+      console.warn("NepaliInput: invalid selector type, skipping destroy.");
+      return;
+    }
+
+    if (elements.length === 0) {
+      console.warn("NepaliInput: no matching elements found.");
       return;
     }
 
     for (var i = 0; i < elements.length; i++) {
       elements[i].removeEventListener("keydown", _onKeydown);
+      elements[i].classList.remove("nepali-input-active");
+      elements[i].removeAttribute("aria-label");
     }
 
     _hookedElements = [];

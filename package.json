@@ -1,0 +1,29 @@
+{
+  "name": "nepali-input",
+  "version": "1.1.1",
+  "description": "Vanilla JS plugin that converts Romanized Nepali (English keyboard) input into Devanagari script on web forms.",
+  "main": "Bin/NepaliInput.min.js",
+  "scripts": {
+    "test": "node Tests/mapping.test.js"
+  },
+  "keywords": [
+    "nepali",
+    "devanagari",
+    "romanized",
+    "keyboard",
+    "input",
+    "transliterator",
+    "nepali-input",
+    "nepali-keyboard"
+  ],
+  "homepage": "https://github.com/npneRghv/Romanized-Nepali-input",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/npneRghv/Romanized-Nepali-input.git"
+  },
+  "license": "MIT",
+  "author": "npneRghv",
+  "bugs": {
+    "url": "https://github.com/npneRghv/Romanized-Nepali-input/issues"
+  }
+}

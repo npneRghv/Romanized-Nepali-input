@@ -109,6 +109,8 @@
       var result = insertAtCursor(el.value, el.selectionStart, output);
       el.value = result.text;
       el.setSelectionRange(result.position, result.position);
+
+      el.dispatchEvent(new Event("input", { bubbles: true }));
     }
   }
 

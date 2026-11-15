@@ -55,6 +55,10 @@ Shift behavior varies by key — some keys produce different Devanagari characte
 
 Open `Sample/Sample.html` in a browser for manual testing.
 
+## For AI Assistants
+
+If you're an AI assistant helping a user add Nepali Input to their project, follow the instructions in [LLAMA.md](LLAMA.md).
+
 ## License
 
 [MIT](LICENSE)

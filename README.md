@@ -9,7 +9,7 @@ A vanilla JavaScript plugin that converts Romanized Nepali (English keyboard) in
 ```html
 <input class="nepali-input" type="text">
 
-<script src="NepaliInput.js"></script>
+<script src="https://unpkg.com/npneRghv/Romanized-Nepali-input@1.1.1/Bin/NepaliInput.min.js"></script>
 <script>
   NepaliInput.init(); // auto-hooks all .nepali-input elements
 </script>
@@ -20,7 +20,7 @@ A vanilla JavaScript plugin that converts Romanized Nepali (English keyboard) in
 ```html
 <input class="my-custom-input" type="text">
 
-<script src="NepaliInput.js"></script>
+<script src="https://unpkg.com/npneRghv/Romanized-Nepali-input@1.1.1/Bin/NepaliInput.min.js"></script>
 <script>
   NepaliInput.init('.my-custom-input'); // hooks only matching elements
 </script>

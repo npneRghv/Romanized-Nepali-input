@@ -5,7 +5,7 @@
 Add this to your HTML before closing `</body>`:
 
 ```html
-<script src="./dist/NepaliInput.js"></script>
+<script src="https://unpkg.com/npneRghv/Romanized-Nepali-input@1.1.1/Bin/NepaliInput.min.js"></script>
 <script>NepaliInput.init();</script>
 ```
 
@@ -15,7 +15,7 @@ Then add `class="nepali-input"` to any `<input>` or `<textarea>` that should acc
 
 Copy and paste this instruction:
 
-> Add Nepali Input support to the form. Include the NepaliInput.js script, call NepaliInput.init() after loading, and add class="nepali-input" to all text inputs and textareas that should accept Romanized Nepali input.
+> Add Nepali Input support to the form. Include the script from https://unpkg.com/npneRghv/Romanized-Nepali-input@1.1.1/Bin/NepaliInput.min.js, call NepaliInput.init() after loading, and add class="nepali-input" to all text inputs and textareas that should accept Romanized Nepali input.
 
 ## What It Does
 

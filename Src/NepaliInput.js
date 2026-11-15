@@ -88,6 +88,15 @@
   }
 
   var _hookedElements = [];
+  var _isComposing = false;
+
+  function _onCompositionStart() {
+    _isComposing = true;
+  }
+
+  function _onCompositionEnd() {
+    _isComposing = false;
+  }
 
   function _onKeydown(e) {
     var el = e.target;
@@ -99,6 +108,8 @@
     }
 
     if (e.ctrlKey) return;
+
+    if (_isComposing) return;
 
     if (MAPPINGS[code]) {
       var output = resolveKey(code, hasShift);
@@ -138,6 +149,8 @@
 
     for (var i = 0; i < elements.length; i++) {
       elements[i].addEventListener("keydown", _onKeydown);
+      elements[i].addEventListener("compositionstart", _onCompositionStart);
+      elements[i].addEventListener("compositionend", _onCompositionEnd);
       elements[i].setAttribute("aria-label", "Nepali input");
       elements[i].classList.add("nepali-input-active");
       _hookedElements.push(elements[i]);
@@ -165,6 +178,8 @@
 
     for (var i = 0; i < elements.length; i++) {
       elements[i].removeEventListener("keydown", _onKeydown);
+      elements[i].removeEventListener("compositionstart", _onCompositionStart);
+      elements[i].removeEventListener("compositionend", _onCompositionEnd);
       elements[i].classList.remove("nepali-input-active");
       elements[i].removeAttribute("aria-label");
     }
